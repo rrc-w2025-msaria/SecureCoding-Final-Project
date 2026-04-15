@@ -9,7 +9,7 @@ from PySide6.QtWidgets import QApplication
 import sys
 import random
 
-session_token = str(random.random())  # Bandit: B311
+session_token = str(random.random())
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

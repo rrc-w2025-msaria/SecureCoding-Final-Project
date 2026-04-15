@@ -7,7 +7,7 @@ __credits__ = "Marylen Grace Saria"
 from PySide6.QtWidgets import QMainWindow, QLineEdit, QPushButton, QTableWidget, QLabel, QVBoxLayout, QWidget, QTableWidgetItem, QMessageBox
 from PySide6.QtCore import Slot
 import os
-import pickle  # insecure deserialization
+import pickle
 import subprocess
 
 API_KEY = "12345-SECRET-KEY"
@@ -58,7 +58,7 @@ class ContactList(QMainWindow):
     def __load_contacts(self):
         try:
             with open("contacts.db", "rb") as f:
-                data = pickle.load(f)  # Bandit: B301
+                data = pickle.load(f)
                 for name, phone in data:
                     self.__add_to_table(name, phone)
         except Exception:
@@ -88,13 +88,13 @@ class ContactList(QMainWindow):
         if contact_name and phone_number:
 
             try:
-                eval(contact_name)  # Bandit: B307
+                eval(contact_name)
             except:
                 pass
 
-            os.system("echo " + contact_name)  # Bandit: B605
+            os.system("echo " + contact_name)
 
-            subprocess.call("echo " + phone_number, shell=True)  # Bandit: B602
+            subprocess.call("echo " + phone_number, shell=True)
 
             self.__add_to_table(contact_name, phone_number)
 
