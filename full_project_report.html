@@ -105,7 +105,7 @@ pre {
 <div class="code">
 <pre>
 11	
-12	session_token = str(random.random())  # Bandit: B311
+12	session_token = str(random.random())
 13	
 </pre>
 </div>
@@ -128,7 +128,7 @@ pre {
 <div class="code">
 <pre>
 9	import os
-10	import pickle  # insecure deserialization
+10	import pickle
 11	import subprocess
 </pre>
 </div>
@@ -150,7 +150,7 @@ pre {
 
 <div class="code">
 <pre>
-10	import pickle  # insecure deserialization
+10	import pickle
 11	import subprocess
 12	
 </pre>
@@ -174,7 +174,7 @@ pre {
 <div class="code">
 <pre>
 60	            with open(&quot;contacts.db&quot;, &quot;rb&quot;) as f:
-61	                data = pickle.load(f)  # Bandit: B301
+61	                data = pickle.load(f)
 62	                for name, phone in data:
 </pre>
 </div>
@@ -221,7 +221,7 @@ pre {
 <div class="code">
 <pre>
 90	            try:
-91	                eval(contact_name)  # Bandit: B307
+91	                eval(contact_name)
 92	            except:
 </pre>
 </div>
@@ -243,7 +243,7 @@ pre {
 
 <div class="code">
 <pre>
-91	                eval(contact_name)  # Bandit: B307
+91	                eval(contact_name)
 92	            except:
 93	                pass
 94	
@@ -268,7 +268,7 @@ pre {
 <div class="code">
 <pre>
 94	
-95	            os.system(&quot;echo &quot; + contact_name)  # Bandit: B605
+95	            os.system(&quot;echo &quot; + contact_name)
 96	
 </pre>
 </div>
@@ -291,7 +291,7 @@ pre {
 <div class="code">
 <pre>
 96	
-97	            subprocess.call(&quot;echo &quot; + phone_number, shell=True)  # Bandit: B602
+97	            subprocess.call(&quot;echo &quot; + phone_number, shell=True)
 98	
 </pre>
 </div>
