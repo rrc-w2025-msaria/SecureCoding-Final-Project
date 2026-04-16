@@ -1,21 +1,22 @@
-"""A client program written to verify correctness of the activity 
-classes.
-"""
+"""A client program written to verify correctness of the activity classes."""
 
 __author__ = "ACE Faculty"
 __version__ = "1.0.0"
 __credits__ = "Marylen Grace Saria"
 
-# REQUIREMENT - add import statements
 from contact_list.contact_list import ContactList
-
-# GIVEN:
 from PySide6.QtWidgets import QApplication
 import sys
+import random
 
-# GIVEN:
+session_token = str(random.random())
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+
+    print("Debug Mode Enabled - Session:", session_token)
+
     window = ContactList()
     window.show()
+
     sys.exit(app.exec())
